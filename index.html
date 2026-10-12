@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fridge to Feast</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🍳 Fridge to Feast</h1>
+<p>Could this BE any more delicious? ☕</p>
+    </header>
+
+    <main>
+
+        <section class="search-box">
+            <h2>What's in your fridge?</h2>
+
+            <input type="text" id="ingredientInput"
+                   placeholder="Example: egg, potato, onion">
+
+            <button onclick="findRecipes()">Find Recipes</button>
+        </section>
+
+        <section>
+            <h2>Choose a Category</h2>
+
+            <button onclick="showCategory('all')">All</button>
+            <button onclick="showCategory('breakfast')">Breakfast</button>
+            <button onclick="showCategory('lunch')">Lunch</button>
+            <button onclick="showCategory('dessert')">Dessert</button>
+        </section>
+
+        <section id="recipeContainer">
+
+        </section>
+
+    </main>
+    <script src="script.js"></script>
+
+</body>
+</html>

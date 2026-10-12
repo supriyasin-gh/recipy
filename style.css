@@ -1,0 +1,372 @@
+```css
+/* ==================================
+   FRIDGE TO FEAST
+   Friends x Central Perk Theme
+================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --cream: #fff8ed;
+    --brown: #795037;
+    --dark-brown: #422c24;
+    --coffee: #a56b45;
+    --red: #df304d;
+    --blue: #1685b5;
+    --yellow: #f5b51b;
+    --green: #087653;
+    --purple: #81469b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--cream);
+    color: var(--dark-brown);
+    line-height: 1.7;
+}
+
+/* HEADER: CENTRAL PERK FEEL */
+
+header {
+    text-align: center;
+    padding: 48px 20px 38px;
+    color: white;
+    background:
+        linear-gradient(
+            rgba(35, 22, 16, 0.84),
+            rgba(35, 22, 16, 0.88)
+        ),
+        repeating-linear-gradient(
+            90deg,
+            #70412e 0px,
+            #70412e 45px,
+            #5b3326 45px,
+            #5b3326 90px
+        );
+    border-bottom: 7px solid var(--yellow);
+    position: relative;
+}
+
+header::after {
+    content: "● ● ●";
+    display: block;
+    margin-top: 12px;
+    font-size: 20px;
+    letter-spacing: 8px;
+    color: var(--red);
+    text-shadow:
+        28px 0 var(--yellow),
+        56px 0 var(--blue);
+}
+
+header h1 {
+    font-family: 'Patrick Hand', cursive;
+    font-size: clamp(2.5rem, 6vw, 4.3rem);
+    line-height: 1.2;
+    letter-spacing: 2px;
+    color: #fff8ed;
+}
+
+header p {
+    margin-top: 12px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.5rem;
+    color: #f9dcae;
+}
+
+/* MAIN LAYOUT */
+
+main {
+    max-width: 1200px;
+    margin: 35px auto;
+    padding: 0 24px;
+}
+
+section {
+    margin-bottom: 36px;
+}
+
+section h2 {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 2rem;
+    color: var(--dark-brown);
+    margin-bottom: 18px;
+}
+
+/* INGREDIENT SEARCH */
+
+.search-box {
+    background: #fffdf8;
+    border: 2px solid #e7d3b9;
+    border-radius: 18px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 7px 18px rgba(66, 44, 36, 0.10);
+    position: relative;
+}
+
+.search-box::after {
+    content: "Good food, good friends ♡";
+    display: block;
+    margin-top: 12px;
+    color: var(--green);
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.15rem;
+}
+
+#ingredientInput {
+    width: min(70%, 600px);
+    padding: 15px 18px;
+    margin-right: 8px;
+    border: 2px solid #ded0c2;
+    border-radius: 30px;
+    background: white;
+    color: var(--dark-brown);
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: 0.25s ease;
+}
+
+#ingredientInput:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 4px rgba(8, 118, 83, 0.12);
+}
+
+#ingredientInput::placeholder {
+    color: #998779;
+}
+
+/* ALL BUTTONS */
+
+button {
+    border: none;
+    border-radius: 30px;
+    padding: 12px 23px;
+    margin: 5px 4px;
+    background: var(--coffee);
+    color: white;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+button:hover {
+    background: var(--dark-brown);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 13px rgba(66, 44, 36, 0.18);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+button:focus-visible {
+    outline: 3px solid var(--yellow);
+    outline-offset: 3px;
+}
+
+/* CATEGORY BUTTONS
+   Targets the second section in your HTML */
+
+main > section:nth-of-type(2) {
+    text-align: center;
+}
+
+main > section:nth-of-type(2) button {
+    min-width: 115px;
+    margin: 5px 7px;
+}
+
+/* All */
+main > section:nth-of-type(2) button:nth-of-type(1) {
+    background: #302823;
+}
+
+/* Breakfast */
+main > section:nth-of-type(2) button:nth-of-type(2) {
+    background: #d99a14;
+}
+
+/* Lunch */
+main > section:nth-of-type(2) button:nth-of-type(3) {
+    background: var(--red);
+}
+
+/* Dessert */
+main > section:nth-of-type(2) button:nth-of-type(4) {
+    background: var(--purple);
+}
+
+main > section:nth-of-type(2) button:hover {
+    filter: brightness(0.88);
+}
+
+/* RECIPE GRID */
+
+#recipeContainer {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    align-items: stretch;
+}
+
+/* RECIPE CARDS */
+
+.recipe-card {
+    background: #fffefa;
+    border: 1px solid #eadccc;
+    border-radius: 16px;
+    padding: 23px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 15px rgba(66, 44, 36, 0.08);
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.recipe-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    background: linear-gradient(
+        90deg,
+        var(--red) 0%,
+        var(--yellow) 33%,
+        var(--blue) 66%,
+        var(--green) 100%
+    );
+}
+
+.recipe-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 13px 26px rgba(66, 44, 36, 0.15);
+}
+
+.recipe-card h3 {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.55rem;
+    line-height: 1.3;
+    color: var(--brown);
+    margin: 5px 0 12px;
+}
+
+.recipe-card p {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    overflow-wrap: anywhere;
+}
+
+.recipe-card p b {
+    color: var(--green);
+}
+
+/* VIEW RECIPE BUTTON */
+
+.recipe-card .view-recipe-btn {
+    background: var(--coffee);
+    border-radius: 9px;
+    padding: 10px 17px;
+    margin: auto 0 0;
+    align-self: flex-start;
+}
+
+.recipe-card .view-recipe-btn:hover {
+    background: var(--green);
+}
+
+/* NO RESULTS MESSAGE */
+
+#recipeContainer > h3 {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 35px 20px;
+    background: white;
+    border-radius: 15px;
+    color: var(--brown);
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.7rem;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+    #recipeContainer {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #ingredientInput {
+        width: 100%;
+        margin: 0 0 12px;
+    }
+
+    .search-box {
+        padding: 24px 18px;
+    }
+}
+
+@media (max-width: 560px) {
+    header {
+        padding: 35px 15px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+
+    main {
+        margin: 24px auto;
+        padding: 0 14px;
+    }
+
+    section h2 {
+        font-size: 1.7rem;
+    }
+
+    #recipeContainer {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .recipe-card {
+        padding: 22px;
+    }
+
+    main > section:nth-of-type(2) button {
+        min-width: 105px;
+        padding: 10px 15px;
+    }
+}
+
+/* REDUCE MOTION WHEN PREFERRED */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+```
